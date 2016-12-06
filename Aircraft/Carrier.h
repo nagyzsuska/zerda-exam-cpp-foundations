@@ -19,6 +19,7 @@ public:
   int Carrier::get_total_damage();
   std::string to_string(int integer);
   std::string get_status();
+  void set_m_health_point(int damage);
   ~Carrier();
 };
 

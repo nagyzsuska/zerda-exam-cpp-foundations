@@ -48,12 +48,16 @@ void Carrier::fill() throw (std::string) {
   }
 }
 
+void Carrier::set_m_health_point(int damage) {
+  m_health_point -= damage;
+}
+
 void Carrier::fight(Carrier &c) {
   int damage = 0;
   for (unsigned int i = 0; i < aircrafts_vector.size(); i++) {
    damage += aircrafts_vector[i]->fight();
   }
-  m_health_point -= damage;
+  c.set_m_health_point(damage);
 }
 
 int Carrier::get_total_damage() {
